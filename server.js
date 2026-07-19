@@ -63,6 +63,12 @@ server.delete("/videos/:id", (request, response) => {
 server.listen({
     host:'0.0.0.0',
     port: process.env.PORT ?? 3333,
+}, (err, address) => {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    }
+    console.log(`Server listening at ${address}`);
 });
 
 
